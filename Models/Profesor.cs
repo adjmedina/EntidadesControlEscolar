@@ -10,7 +10,7 @@ namespace EntidadesControlEscolar.Models
     {
         /// Identificador de Profesor
         public int ProfesorId { get; set; }
-        /// Nombres del Profesor
+        /// Nombres del Profesord
         public string Nombre { get; set; }
         /// Apellido Paterno
         public string ApellidoPaterno { get; set; }

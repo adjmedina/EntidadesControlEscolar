@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace EntidadesControlEscolar.Models
@@ -8,23 +9,22 @@ namespace EntidadesControlEscolar.Models
     /// </summary>
     public class Inscripcion
     {
+        /// Id del registro
         public int InscripcionId { get; set; }
+        /// Id del ALumno relacionado
         public int AlumnoId { get; set; }
+        /// Id del Ciclo escolar relacionado
         public int CicloEscolarId { get; set; }
+        /// id del la cuenta asociada al alumno
+        public int GrupoId { get; set; }
+        /// Vicula con la cuenta del alumno 
         public int CuentaId { get; set; }
-        public ICollection<int> Clases { get; set; }
+        /// Vinculo a una lista de clases
+        public ICollection<int> Clases { get; set; } //Cambiar esta linea
+        /// Fecha en que se registro la inscripción
+        public DateTime FechaInscripcion { get; set; }
+        /// 0=baja definitiva, 1=inscrito, 4=baja temporal, 5=finalizado
+        public int EstadoInscripcion { get; set; }
 
-        /*
-            `idtminscripcion` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Id del registro',
-            `idtcalumno` INT(11) NOT NULL COMMENT 'Id del registro del catalogo de Alumnos',
-            `idtccicloescolar` INT(11) NOT NULL COMMENT 'Id del registro del catalogo de Ciclos escolares',
-            `idtcnivelacademico` INT(11) NOT NULL COMMENT 'Id del registro del catalogo de Niveles academicos',
-            `idtcgrado` INT(11) NOT NULL COMMENT 'Id del registro del catalogo de Grados',
-            `grupo` VARCHAR(5) NOT NULL DEFAULT 'A' COMMENT 'Nombre abreviado del grupo',
-            `fecha` DATETIME NOT NULL COMMENT 'Fecha y hora en que se registra la inscripcion',
-            `estatus` INT(5) NOT NULL DEFAULT '1' COMMENT 'Estatus: 0=baja definitiva, 1=inscrito, 2=cursando, 4=baja temporal, 5=finalizado',
-            `matricula` VARCHAR(12) NOT NULL COMMENT 'Generada a partir de la tabla tomatricula',
-            `referenciabancaria` VARCHAR(45) NOT NULL COMMENT 'Numero de referencia bancaria para realizar sus depositas',
-        */
     }
 }
