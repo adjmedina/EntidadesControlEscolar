@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace EntidadesControlEscolar.Models
 {
@@ -27,6 +28,14 @@ namespace EntidadesControlEscolar.Models
         public DateTime FechaNacimiento { get; set; }
         /// Fecha De Ingreso a la institucion DD/MM/AA
         public DateTime FechaRegistro { get; set; }
+
+        // ------------ Referencias a Entidades -------------
+
+        /// Link a Inscripcion
+        public ICollection<Inscripcion> Inscripciones { get; set; }
+
+        /// Link a Tutotes Asociados
+        public ICollection<Tutor> Tutores { get; set; }
 
     }
 

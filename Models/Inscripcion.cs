@@ -26,5 +26,13 @@ namespace EntidadesControlEscolar.Models
         /// 0=baja definitiva, 1=inscrito, 4=baja temporal, 5=finalizado
         public int EstadoInscripcion { get; set; }
 
+        // ------------ Referencias a Entidades -------------
+
+        /// Link a objeto alumno
+        public Alumno Alumno { get; set; }
+        /// Link a objeto Curso
+        public ICollection<Curso> Curso { get; set; }
+
+
     }
 }

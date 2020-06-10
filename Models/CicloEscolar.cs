@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace EntidadesControlEscolar.Models
 {
@@ -9,9 +10,16 @@ namespace EntidadesControlEscolar.Models
     public class CicloEscolar
     {
         public int CicloEscolarId { get; set; }
-        public string titulo { get; set; }
+        public string Titulo { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaTermino { get; set; }
+
+        // ------------ Referencias a Entidades -------------
+        /// Referencia a objeto Inscripcion 
+        public ICollection<Inscripcion> Inscripcion { get; set; }
+
+
+
 
 
     }
